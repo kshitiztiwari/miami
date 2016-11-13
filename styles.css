@@ -33,7 +33,7 @@ p{
 }
 
 .padded{
-	padding: 5rem;
+	padding: 6rem;
 }
 
 .align-center{
@@ -50,6 +50,10 @@ p{
 
 .sep{
 	height: 1rem;
+}
+
+.primary-light {
+	background-color: #30b0e5;
 }
 
 /**
@@ -88,7 +92,8 @@ p{
 .v-span-half,
 .v-span-1,
 .v-span-6,
-.v-span-1-2 {
+.v-span-1-2,
+.v-span-1-5 {
 	position: relative;
 }
 
@@ -123,6 +128,13 @@ p{
  */
 .v-span-1-2{
 	padding-bottom: 120%;
+}
+
+/**
+ * Height = 1.5*Width
+ */
+.v-span-1-5 {
+	padding-bottom: 150%;
 }
 
 
@@ -167,7 +179,7 @@ p{
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.6);
 	content: '';
 
 }
@@ -187,6 +199,15 @@ p{
 .walter{
 		background-image: url( 'img/walter.jpg');
 }
+
+.arch{
+	background-image: url( 'img/img1.png');
+}
+
+.shell{
+	background-image: url( 'img/shell.jpg');
+}
+
 
 .connect-button{
 	padding-left: 0.5rem;
