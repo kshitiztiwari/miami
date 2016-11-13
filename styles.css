@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body {
+	margin: 0; padding: 0;
+	background-color: #FFF;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+img{
+	max-width: 100%;
+}
+
+p{
+	line-height: 1.5;
+}
+
+.text-white{
+	color: #FFF;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.dim{
+	opacity: 0.8;
+}
+
+.padded{
+	padding: 5rem;
+}
+
+.align-center{
+	vertical-align: middle;
+}
+
+.medium-text{
+	font-size: 1.2rem;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.sep{
+	height: 1rem;
+}
+
+/**
+ * Wrapper for the fibonacci grid holder
+ */
+.wrapper{
+	max-width: 75em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fg-half,
+.fg-1,
+.fg-2,
+.fg-3 {
+	float: left;
+}
+
+.fg-half {
+	width: 50%;
+}
+
+.fg-1 {
+	width: 100%;
+}
+
+.fg-2 {
+	width: 40%;
+}
+
+.fg-3 {
+	width: 60%;
+}
+
+
+.v-span-half,
+.v-span-1,
+.v-span-6,
+.v-span-1-2 {
+	position: relative;
+}
+
+/**
+ * .v-span-(1) 
+ * (1*100) / 100 = 1 
+ * Height = 1*Width
+ * This span class makes the div exactyly equal to its height
+ */
+.v-span-1{
+	padding-bottom: 100%;
+}
+
+
+/**
+ * Height = 0.5*Width
+ * This class makes the height of div equal to half its width
+ */
+.v-span-half{
+	padding-bottom: 50%;
+}
+
+/**
+ * Height = 0.6*Width
+ */
+.v-span-6{
+	padding-bottom: 60%;
+}
+
+/**
+ * Height = 1.2*Width
+ */
+.v-span-1-2{
+	padding-bottom: 120%;
+}
+
+
+
+.fg-content-wrapper{
+	position: absolute;
+	left: 0; top: 0; bottom: 0; right: 0;
+	height: 100%;
+	width: 100%;
+	padding: 0.375rem; 
+	/*
+	 Inorder to keep the gap between the grid = 12px 
+	 Keep 6px padding on each box
+	 (6px / 16px) = 0.375
+	 */
+}
+
+.fg-content{
+	display: table;
+	height: 100%;
+	width: 100%;
+	/*background-color: #fafafa;
+	border: 1px solid #ccc;*/
+}
+
+.v-align-center{
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.fg-bg{
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	z-index: 1;
+}
+
+.fg-bg.overlay:after{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: rgba(0,0,0,0.5);
+	content: '';
+
+}
+
+.eye{
+	background-image: url( 'img/eye.png');
+}
+
+.flower{
+	background-image: url( 'img/flower-1.png');
+}
+
+.galaxy{
+	background-image: url( 'img/nebula.png');
+}
+
+.walter{
+		background-image: url( 'img/walter.jpg');
+}
+
+.connect-button{
+	padding-left: 0.5rem;
+}
