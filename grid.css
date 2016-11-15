@@ -1,0 +1,159 @@
+/**
+ * Wrapper for the fibonacci grid holder
+ */
+.wrapper{
+	max-width: 75em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wrapper:after,
+.wrapper:before {
+	clear: both;
+	content: '';
+	display: block;
+	width: 100%;
+}
+
+.fg-half,
+.fg-1,
+.fg-2,
+.fg-3,
+.fg-8-10,
+.fg-2-10 {
+	float: left;
+}
+
+.fg-half {
+	width: 50%;
+}
+
+.fg-1 {
+	width: 100%;
+}
+
+.fg-2 {
+	width: 40%;
+}
+
+.fg-3 {
+	width: 60%;
+}
+
+.fg-2-10 {
+	width: 20%;
+}
+
+.fg-8-10{
+	width: 80%;
+}
+
+
+.v-span-half,
+.v-span-1,
+.v-span-6,
+.v-span-1-2,
+.v-span-1-5,
+.v-span-3-8 {
+	position: relative;
+}
+
+/**
+ * .v-span-(1) 
+ * (1*100) / 100 = 1 
+ * Height = 1*Width
+ * This span class makes the div exactyly equal to its height
+ */
+.v-span-1{
+	padding-bottom: 100%;
+}
+
+
+/**
+ * Height = 0.5*Width
+ * This class makes the height of div equal to half its width
+ */
+.v-span-half{
+	padding-bottom: 50%;
+}
+
+/**
+ * Height = 0.6*Width
+ */
+.v-span-6{
+	padding-bottom: 60%;
+}
+
+/**
+ * Height = 1.2*Width
+ */
+.v-span-1-2{
+	padding-bottom: 120%;
+}
+
+/**
+ * Height = 1.5*Width
+ */
+.v-span-1-5 {
+	padding-bottom: 150%;
+}
+
+/**
+ * Height = (3/8)*Width
+ */
+.v-span-3-8 {
+	padding-bottom: 37.5%;
+}
+
+
+
+.fg-content-wrapper{
+	position: absolute;
+	left: 0; top: 0; bottom: 0; right: 0;
+	height: 100%;
+	width: 100%;
+	padding: 0.375rem;
+	/*
+	 Inorder to keep the gap between the grid = 12px 
+	 Keep 6px padding on each box
+	 (6px / 16px) = 0.375
+	 */
+}
+
+
+.fg-content{
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.v-align-center, .v-align-bottom{
+	display: table-cell;
+}
+
+.v-align-center{
+	vertical-align: middle;
+}
+
+.v-align-bottom{
+	vertical-align: bottom;
+}
+
+.fg-bg{
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	z-index: 1;
+}
+
+.fg-bg.overlay:after{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: rgba(0,0,0,0.6);
+	content: '';
+
+}
