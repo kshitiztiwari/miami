@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
+@font-face{
+    font-family:"FFDINWeb";
+    src:url("./fonts/31F820_0_0.eot");
+    src:url("./fonts/31F820_0_0.eot?#iefix") format("embedded-opentype"), url("./fonts/31F820_0_0.woff2") format("woff2"), url("./fonts/31F820_0_0.woff") format("woff"), url("./fonts/31F820_0_0.ttf") format("truetype");
+    font-weight: normal;
+    font-style:normal;
+}
+
 body {
 	margin: 0; padding: 0;
 	background-color: #FFF;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'FFDINWeb', sans-serif;
 	color: #545454;
 }
 
