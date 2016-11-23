@@ -1,7 +1,163 @@
-@font-face
-  font-family: "FFDINWeb"
-  src: url("./fonts/31F820_0_0.eot")
-  src: url("./fonts/31F820_0_0.eot?#iefix") format("embedded-opentype"), url("./fonts/31F820_0_0.woff2") format("woff2"), url("./fonts/31F820_0_0.woff") format("woff"), url("./fonts/31F820_0_0.ttf") format("truetype")
-  font-weight: normal
-  font-style: normal
+$overlay-dark: transparentize( $black, 0.2)
 
+@font-face
+	font-family: "FFDINWeb"
+	src: url("#{$font-path}/31F820_0_0.eot")
+	src: url("#{$font-path}/31F820_0_0.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/31F820_0_0.woff2") format("woff2"), url("#{$font-path}/31F820_0_0.woff") format("woff"), url("#{$font-path}/31F820_0_0.ttf") format("truetype")
+	font-weight: normal
+	font-style: normal
+
+*
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+
+body 
+	margin: 0
+	padding: 0
+	background-color: $body-bakground-color
+	font-family: $body-font-family
+	color: $body-font-color
+
+img 
+	max-width: 100%
+
+.bold
+	font-weight: bold
+
+.text--white
+	color: $white
+
+.text--center
+	text-align: center
+
+.text--medium
+	@extend %font-size-m 
+
+.text--light
+	color: $gray 
+
+.sep
+	margin-bottom: 2rem
+
+.padding--xlarge
+	@extend %padding-xlarge
+
+.padding--medium
+	@extend %padding-medium
+
+.section
+	@extend %padding-left-right-xlarge
+	@extend %padding-top-bottom-medium
+
+.icon
+	width: 48px
+
+
+
+.section__heading
+	@extend %font-size-xl
+
+.event	
+	@extend %padding-large
+
+.event__heading
+	@extend %font-size-xl
+	margin-bottom: 0
+
+.event__meta
+	@extend .text--light
+	@extend %font-size-m
+
+.bg
+	&--cover
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+
+	&--overlay
+		position: relative
+		z-index: 1
+
+		&:after
+			content: ''
+			@extend %cover-available-space
+			z-index: -1
+			background-color: $overlay-dark
+	
+	&--grey
+		background-color: #e8e8e8
+
+	&--gradient
+		position: relative
+		z-index: 1
+
+		&:after 
+			content: ''
+			@extend %cover-available-space
+			background-image: linear-gradient( transparent, $overlay-dark )
+			z-index: -1
+
+
+.table
+	display: table
+	&--cover
+		height: 100%
+		width: 100%
+
+.table-cell
+	@extend %display-table-cell
+
+.va
+	&--center, &--middle
+		vertical-align: middle
+
+	&--bottom
+		vertical-align: bottom
+
+
+.uppercase
+	@extend %text-uppercase
+
+.block-content--padded
+	@extend %padding-small
+
+.overflow--hide
+	@extend %overflow-hidden
+
+.half-triangle
+	position: relative
+	width: 1.4142 * 100%
+	height: 1.4142 * 100%
+	margin-top: 29%
+	left: 29%
+
+	&:after
+		@extend %cover-available-space
+		content: ''
+		background-color: transparentize($white, 0.5)
+		border: 6px solid $white
+		transform: rotate( 45deg )
+
+
+// Backgroud images 
+// These images are temporary and will be removed during the development
+.cross-bow
+	background-image: image( 'img_crossbow.jpg' )
+
+.flower
+	background-image: image( 'flower-1.png' )
+
+.nebula
+	background-image: image( 'nebula.png' )
+
+.walter
+	background-image: image( 'walter.jpg' )
+
+.window
+	background-image: image( 'img1.png' )
+
+.bg--event
+	background-image: image( 'img_event.jpg' )
+
+.connect > .icon
+	margin-right: 1rem
