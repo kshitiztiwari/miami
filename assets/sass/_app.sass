@@ -139,8 +139,9 @@ $anchor-line-height: 5rem !default
 .full-logo
 	position: absolute
 	top: -2px
+	z-index: -1
 	margin-left: -30px
-	transition: all $transition-timing $transition-easing
+	transition: all $transition-timing*2 $transition-easing
 	opacity: 0
 	transform: scale( 0.99 )
 
@@ -178,6 +179,44 @@ $anchor-line-height: 5rem !default
 			vertical-align: top
 			@extend %font-size-s
 			@extend .bold !optional
+
+			&:first-child a
+				&:hover
+					color: $miami-blue
+
+				&.nav-link.active > span 
+					box-shadow: 0 4px $miami-blue inset
+
+
+			&:nth-child(2) a
+				&:hover
+					color: $miami-gold
+
+				&.nav-link.active > span 
+					box-shadow: 0 4px $miami-gold inset
+
+			&:nth-child(3) a
+				&:hover
+					color: $miami-orange
+
+				&.nav-link.active > span
+					box-shadow: 0 4px $miami-orange inset 
+
+			&:nth-child(4) a
+				&:hover
+					color: $miami-green
+
+				&.nav-link.active > span 
+					box-shadow: 0 4px $miami-green inset
+
+
+			&:nth-child(5) a
+				&:hover
+					color: $color-tundora
+
+				&.nav-link.active > span 
+					box-shadow: 0 4px $color-tundora inset
+
 
 	.nav-link
 		@extend %text-uppercase
@@ -220,7 +259,7 @@ $anchor-line-height: 5rem !default
 				padding-left: $padding-medium
 				margin-left: -$padding-medium
 				padding-bottom: 0
-				box-shadow: -4px 0 0 $miami-blue
+				box-shadow: -4px 0 0 $miami-orange
 				@extend .bold
 				color: $body-font-color
 
@@ -228,6 +267,9 @@ $anchor-line-height: 5rem !default
 			display: inline-block
 			line-height: 1.2
 			padding-bottom: $padding-medium
+
+			&:hover
+				color: $miami-orange
 
 
 		
@@ -360,6 +402,9 @@ $anchor-line-height: 5rem !default
 			@extend %cover-available-space
 			background-image: linear-gradient( transparent, $overlay-dark )
 			z-index: -1
+
+	&--flamenco
+		background-color: $miami-orange
 
 
 

@@ -44,7 +44,7 @@ $( document ).ready( function(){
 	var $full_logo = $('#logo_full');
 
 	console.log( $full_logo );
-	var logo_position  = $logo.offset().top - 15;
+	var logo_position  = $logo.offset().top - 8;
 
 	var initial_width = $logo.width();
 	var final_width = $logo.width()*0.5;
