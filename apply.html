@@ -8,17 +8,17 @@
 </head>
 
 <body>
-	<header class="main-header">
+	<header class="main-header" id="main-header">
 		<div class="grid grid--1">
 			<nav class="main-nav">
 				<ul>
 					<li>
-						<a href="#" class="nav-link active"><span>Home<span></a>
+						<a href="index.html" class="nav-link active" id="home-nav"><span>Home<span></a>
 						<ul class="sub-nav dim">
 							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a> </li>
 							<li><a href="#"><i class="fa fa-facebook-f" aria-hidden="true"></i> Facebook</a></li>
 							<li>
-								<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a>	
+							<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a>	
 							</li>
 							<li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
 						</ul>
@@ -33,14 +33,14 @@
 						</ul>
 					</li>
 					<li>
-						<a href="#" class="nav-link">Apply</a>
+						<a href="apply.html" class="nav-link">Apply</a>
 						<ul class="sub-nav">
 							<li><a href="#">Admissions</a></li>
 							<li><a href="#">Financial Aid</a></li>
 							<li><a href="#">Schlorships</a></li>
 							<li><a href="#">Upcoming Events</a></li>
 						</ul>
-
+			
 					</li>
 					<li>
 						<a href="#" class="nav-link">People</a>
@@ -52,7 +52,7 @@
 							<li><a href="#">Campus</a></li>
 							<li><a href="#">Latest News</a></li>
 						</ul>
-
+			
 					</li>
 					<li>
 						<a href="#" class="nav-link">Contact Us</a>
@@ -60,7 +60,7 @@
 							<li><a href="#">Get in Touch</a></li>
 							<li><a href="#">Request Info Pack</a></li>
 						</ul>
-
+			
 					</li>
 				</ul>
 			</nav>
@@ -89,7 +89,11 @@
 					<div class="column">
 						<div class="aspect-ratio aspect-ratio--1">
 							<div class="block-content block-content--padded">
-								<img src="./assets/img/iam-blue.png" alt="Miami College of Design Logo" />
+								<a href="index.html">
+									<div class="logo-holder">
+											<img src="./assets/img/iam-blue.png" alt="Miami College of Design Logo" class="miami-logo" id="logo"/>
+										</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -270,6 +274,6 @@
 	</footer>
 </body>
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="functions.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="functions.js"></script>
 	</html>

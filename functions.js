@@ -34,20 +34,47 @@ _.throttle = function(func, wait, options) {
 
 $( document ).ready( function(){
 	
+
+
 	$mainHeader = $('#main-header');
 	$window = $(window);
 
-	var sticky_header = function(){
-		var scroll_pos = $window.scrollTop();
+	var $logo = $( '#logo' );
+	var $home_nav = $('#home-nav');
+	var logo_position  = $logo.offset().top - 10;
 
-		if( scroll_pos > 80 ){
-			$mainHeader.addClass( 'sticky' );
-		} else {
-			$mainHeader.removeClass( 'sticky' );
-		}
+	var initial_width = 100;
+	var final_width = 50;
+
+	function animation_state( initial, final, progress ){
+		return initial + ((final-initial) * progress );
 	}
 
-	sticky_header();
+	function animation_progress( final, current ){
+		return (final-current)/final;
+	}
 
-	$window.scroll( _.throttle( sticky_header, 200)  ); 
+	var logo_position_handler = function(){
+		if( $window.scrollTop() > logo_position ){
+			$home_nav.css({ 
+				"opacity" : 0
+			})
+			$logo.css( {
+				"top" : ($window.scrollTop() - logo_position ) + 'px',
+				"z-index" : 400,
+				"width" : final_width + '%',
+			});
+		} else {
+			var progress =  animation_progress( logo_position, $window.scrollTop() );
+			$home_nav.css( {
+				"opacity" : animation_state( 0, 1, progress )
+			});			
+			$logo.css( {
+				"top" :  0 + 'px',
+				"width" : animation_state( final_width, initial_width, progress) + '%',
+				"z-index": 200
+			});
+		}
+	}
+	$window.scroll( logo_position_handler );
 } );

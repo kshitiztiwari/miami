@@ -82,11 +82,11 @@
   display: table-cell;
 }
 
-.aspect-ratio > .block-content, .bg--overlay:after, .bg--gradient:after, .half-triangle:after, .subscribe__button, .event__nav {
+.aspect-ratio > .block-content, .bg--overlay:after, .bg--gradient:after, .half-triangle:after, .logo-holder > .miami-logo, .subscribe__button, .event__nav {
   position: absolute;
 }
 
-.aspect-ratio, .subscribe, .event {
+.aspect-ratio, .logo-holder, .subscribe, .event {
   position: relative;
 }
 
@@ -101,7 +101,7 @@
   left: 0;
 }
 
-.overflow--hide, .main-header, .main-nav > ul {
+.overflow--hide, .main-header, .main-nav > ul, .half-triangle {
   overflow: hidden;
 }
 
@@ -3142,6 +3142,10 @@ a:hover {
   padding-top: 5rem;
 }
 
+.logo-holder > .miami-logo {
+  z-index: 200;
+}
+
 .footer {
   background-color: #fafafa;
   margin-top: 2rem;
@@ -3158,6 +3162,7 @@ a:hover {
 
 .main-header:hover {
   max-height: 800px;
+  z-index: 300;
 }
 
 .main-nav {
@@ -3250,6 +3255,42 @@ a:hover {
   background: transparent;
 }
 
+.scale--1-1--hover, .scale--1-05--hover, .scale--1-025--hover, .shadow--hover {
+  transition: all 300ms ease-in-out;
+}
+
+.scale--1-1--hover {
+  cursor: pointer;
+}
+
+.scale--1-1--hover:hover {
+  transform: scale(1.1);
+}
+
+.scale--1-05--hover {
+  cursor: pointer;
+}
+
+.scale--1-05--hover:hover {
+  transform: scale(1.05);
+}
+
+.scale--1-025--hover {
+  cursor: pointer;
+}
+
+.scale--1-025--hover:hover {
+  transform: scale(1.025);
+}
+
+.shadow--hover {
+  cursor: pointer;
+}
+
+.shadow--hover:hover {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
 .footer-nav {
   margin-bottom: 1rem;
 }
@@ -3327,7 +3368,23 @@ a:hover {
 }
 
 .half-triangle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.half-triangle--rotate {
+  transform: rotate(90deg);
+}
+
+.half-triangle + div {
   position: relative;
+}
+
+.half-triangle.dim, .half-triangle.copyright {
+  opacity: 0.3;
 }
 
 .half-triangle:after {
@@ -3380,6 +3437,32 @@ a:hover {
 .content img.float-left {
   margin-right: 4rem;
   margin-left: -2rem;
+}
+
+.reveal {
+  padding: 2rem;
+}
+
+.reveal .close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 3rem;
+  color: #35B0E5;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 2rem;
+  background-color: white;
+}
+
+.reveal.video {
+  padding: 0;
+}
+
+.reveal.full iframe {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
 }
 
 .cross-bow {
