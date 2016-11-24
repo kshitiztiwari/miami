@@ -1,4 +1,6 @@
 $overlay-dark: transparentize( $black, 0.2)
+$transition-timing: 300ms
+$transition-easing: ease-in-out
 
 @font-face
 	font-family: "FFDINWeb"
@@ -21,8 +23,33 @@ body
 img 
 	max-width: 100%
 
+a 
+	text-decoration: none
+	color: $gray
+	transition: all $transition-timing $transition-easing
+
+	&:hover
+		color: $body-font-color
+
 .bold
 	font-weight: bold
+
+
+.uppercase
+	@extend %text-uppercase
+
+.block-content--padded
+	@extend %padding-small
+
+.overflow--hide
+	@extend %overflow-hidden
+
+
+.float-right
+	@extend %float-right
+
+.float-left
+	@extend %float-left
 
 .text--white
 	color: $white
@@ -39,26 +66,178 @@ img
 .sep
 	margin-bottom: 2rem
 
+.dim
+	opacity: 0.7
+
+.padding-left-right--small
+	@extend %padding-left-right-small
+
+.padding-right--xlarge
+	padding-right: $padding-xlarge
+
 .padding--xlarge
 	@extend %padding-xlarge
 
 .padding--medium
 	@extend %padding-medium
 
+.padding--large
+	@extend %padding-large
+
+.padding-top-bottom--large
+	@extend %padding-top-bottom-large
+
+.padding--small
+	@extend %padding-small
+
 .section
 	@extend %padding-left-right-xlarge
 	@extend %padding-top-bottom-medium
 
 .icon
-	width: 48px
+	width: 40px
 
 
 
 .section__heading
 	@extend %font-size-xl
 
+
+$anchor-line-height: 5rem !default
+
+.main-container
+	padding-top: $anchor-line-height
+
+.footer
+	@extend %padding-top-bottom-large
+	background-color: #fafafa
+	margin-top: $padding-large
+
+.main-header
+	@extend %position-fixed
+	padding-bottom: $padding-medium
+	z-index: 100
+	width: 100%
+	background-color: rgba(255,255,255,0.98)
+	max-height: $anchor-line-height
+	@extend %overflow-hidden
+	transition: max-height $transition-timing $transition-easing
+	
+	&:hover
+		max-height: 800px
+
+// Navigation
+.main-nav
+	margin-bottom: $padding-large
+	> ul 
+		margin: 0
+		padding: 0
+		@extend %overflow-hidden
+		list-style: none
+		> li
+			width: 20%
+			float: left
+			vertical-align: top
+			@extend %font-size-s
+			@extend .bold !optional
+
+	.nav-link
+		@extend %text-uppercase
+		line-height: $anchor-line-height
+		display: block
+		padding-left: $padding-small
+		padding-right: $padding-large
+
+		&.active
+			> span
+				box-shadow: 0 4px $miami-blue inset
+				display: inline-block
+				line-height: $anchor-line-height
+
+.sub-nav
+	margin: 0
+	padding: 0
+	list-style: none
+	font-weight: normal
+	width: 100%
+	
+	a 
+		display: block
+		width: 100%
+		padding-bottom: $padding-small
+		padding-left: $padding-small
+
+
+// Side Navigation
+.side-nav	
+	list-style: none
+	margin: 0
+	@extend %font-size-s
+
+	> li
+		margin-bottom: $padding-medium
+		&.active
+			padding-bottom: $padding-medium
+			> a
+				padding-left: $padding-medium
+				margin-left: -$padding-medium
+				padding-bottom: 0
+				box-shadow: -4px 0 0 $miami-blue
+				@extend .bold
+				color: $body-font-color
+
+		> a
+			display: inline-block
+			line-height: 1.2
+			padding-bottom: $padding-medium
+
+
+		
+
+
+.subscribe
+	@extend %float-right
+	@extend %position-relative
+	width: 50%
+	> input 
+		width: 100%
+		@extend %padding-top-bottom-medium
+		padding-right: 3rem
+		padding-left: $padding-medium
+	
+	&__button
+		@extend %position-absolute
+		border: none
+		right: 0
+		top: 0
+		padding: 1.1rem 1.2rem
+		color: $miami-blue
+		background: transparent
+
+
+
+// Footer
+.footer-nav
+	margin-bottom: $padding-medium
+
+.footer-nav, .privacy-nav
+	> a
+		display: inline-block
+		padding-right: $padding-large
+		padding-left: $padding-small
+
+.privacy-nav, .copyright
+	@extend %font-size-s
+
+.copyright
+	@extend .dim
+	@extend .text--light
+
+
+// Home page event section
 .event	
 	@extend %padding-large
+	@extend %position-relative
 
 .event__heading
 	@extend %font-size-xl
@@ -68,6 +247,19 @@ img
 	@extend .text--light
 	@extend %font-size-m
 
+.event__nav
+	@extend %position-absolute
+	right: 2rem
+	bottom: 2rem
+	
+	& > .icon
+		margin-right: 0.5rem
+
+		&:last-child
+			margin-right: 0
+
+
+// Backround properties
 .bg
 	&--cover
 		background-size: cover
@@ -98,6 +290,8 @@ img
 			z-index: -1
 
 
+
+// Table and vertical align properties
 .table
 	display: table
 	&--cover
@@ -115,21 +309,13 @@ img
 		vertical-align: bottom
 
 
-.uppercase
-	@extend %text-uppercase
 
-.block-content--padded
-	@extend %padding-small
 
-.overflow--hide
-	@extend %overflow-hidden
 
+// Half Traiangle component
 .half-triangle
 	position: relative
-	width: 1.4142 * 100%
-	height: 1.4142 * 100%
-	margin-top: 29%
-	left: 29%
+	@extend %display-table-cell
 
 	&:after
 		@extend %cover-available-space
@@ -137,6 +323,57 @@ img
 		background-color: transparentize($white, 0.5)
 		border: 6px solid $white
 		transform: rotate( 45deg )
+		width: 1.4142 * 100%
+		height: 1.4142 * 100%
+		margin-top: 29%
+		left: 29%
+
+
+
+
+
+// Page section
+.page__header
+	@extend %text-uppercase
+	margin-bottom: 0
+
+.page__sub-head
+	font-weight: normal
+	margin-bottom: 0
+	margin-top: 0
+	@extend %font-size-l
+
+
+.content
+	h1, h2
+		margin-top: 0
+		color: $white
+		background: $dark
+		font-weight: normal
+		display: inline-block
+		@extend %padding-left-right-small
+
+	ul 
+		padding-left: $padding-medium
+		margin-bottom: $padding-large
+
+	.sep--line
+		margin-top: $padding-xlarge
+		margin-bottom: $padding-xlarge
+		width: 100%
+		display: block
+		border-top: 1px solid $gray
+
+
+	img.float-right
+		margin-left: $padding-xlarge
+		margin-right: -$padding-large
+
+	img.float-left
+		margin-right: $padding-xlarge
+		margin-left: -$padding-large
+
+
 
 
 // Backgroud images 
@@ -152,6 +389,15 @@ img
 
 .walter
 	background-image: image( 'walter.jpg' )
+
+.bg--eye
+	background-image: image( 'eye.png' )
+
+.bg--blueprint
+	background-image: image( 'blueprint.jpg' )
+
+.bg--featured
+	background-image: image( 'about_featured.png' )
 
 .window
 	background-image: image( 'img1.png' )
