@@ -101,7 +101,7 @@
   left: 0;
 }
 
-.overflow--hide, .main-header, .main-nav > ul, .half-triangle {
+.overflow--hide, .main-header, .half-triangle {
   overflow: hidden;
 }
 
@@ -3010,7 +3010,7 @@
   width: 80%;
 }
 
-.grid:before, .grid:after, .grid--1 > .column {
+.grid:before, .grid:after, .grid--1 > .column, .main-nav > ul:after, .main-nav > ul:before {
   width: 100%;
 }
 
@@ -3165,6 +3165,28 @@ a:hover {
   z-index: 300;
 }
 
+.full-logo {
+  position: absolute;
+  top: -2px;
+  margin-left: -30px;
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  transform: scale(0.99);
+}
+
+.full-logo > img {
+  height: 54px;
+}
+
+.full-logo.full-logo--opaque {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.miami-logo.miami-logo--transparent {
+  opacity: 0;
+}
+
 .main-nav {
   margin-bottom: 2rem;
 }
@@ -3172,7 +3194,14 @@ a:hover {
 .main-nav > ul {
   margin: 0;
   padding: 0;
+  position: relative;
   list-style: none;
+}
+
+.main-nav > ul:after, .main-nav > ul:before {
+  clear: both;
+  content: '';
+  display: block;
 }
 
 .main-nav > ul > li {

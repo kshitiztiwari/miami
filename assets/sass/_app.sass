@@ -135,13 +135,42 @@ $anchor-line-height: 5rem !default
 		max-height: 800px
 		z-index: 300
 
+
+.full-logo
+	position: absolute
+	top: -2px
+	margin-left: -30px
+	transition: all $transition-timing $transition-easing
+	opacity: 0
+	transform: scale( 0.99 )
+
+	> img
+		height: 54px
+
+	&.full-logo--opaque
+		transform: scale(1)
+		opacity: 1
+
+.miami-logo
+	&.miami-logo--transparent
+		// transition: all $transition-timing $transition-easing
+		opacity: 0
+
 // Navigation
 .main-nav
 	margin-bottom: $padding-large
 	> ul 
 		margin: 0
 		padding: 0
-		@extend %overflow-hidden
+		position: relative
+
+		&:after, &:before
+			clear: both
+			content: ''
+			display: block
+			@extend %width-100
+
+
 		list-style: none
 		> li
 			width: 20%
