@@ -4,12 +4,12 @@ $overlay-light: transparentize( $black, 0.7)
 $transition-timing: 300ms
 $transition-easing: ease-in-out
 
-// @font-face
-// 	font-family: "FFDINWeb"
-// 	src: url("#{$font-path}/31F820_0_0.eot")
-// 	src: url("#{$font-path}/31F820_0_0.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/31F820_0_0.woff2") format("woff2"), url("#{$font-path}/31F820_0_0.woff") format("woff"), url("#{$font-path}/31F820_0_0.ttf") format("truetype")
-// 	font-weight: normal
-// 	font-style: normal
+@font-face
+	font-family: "FFDINWeb"
+	src: url("#{$font-path}/31F820_0_0.eot")
+	src: url("#{$font-path}/31F820_0_0.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/31F820_0_0.woff2") format("woff2"), url("#{$font-path}/31F820_0_0.woff") format("woff"), url("#{$font-path}/31F820_0_0.ttf") format("truetype")
+	font-weight: bold
+	font-style: normal
 
 @font-face
 	font-family: "FFDINWeb"
@@ -122,8 +122,8 @@ $anchor-line-height: 5rem !default
 	@extend %position-relative
 
 	> .miami-logo
-		@extend %position-absolute
-		z-index: 200
+		// @extend %position-absolute
+		// z-index: 200
 
 .footer
 	@extend %padding-top-bottom-large
@@ -149,18 +149,34 @@ $anchor-line-height: 5rem !default
 	position: absolute
 	top: -2px
 	z-index: -1
-	margin-left: -30px
-	transition: all $transition-timing*2 $transition-easing
+	margin-left: -24px
+	transition: transform $transition-timing $transition-easing, opacity $transition-timing $transition-easing
+	transform: translateY( 100% )
 	opacity: 0
-	transform: scale( 0.99 )
 
 	> img
-		height: 54px
+		height: 44px
 		margin-top: 30px
 
 	&.full-logo--opaque
-		transform: scale(1)
 		opacity: 1
+		transform: translateY( -15% )
+
+.main-header:hover
+	.full-logo
+		opacity: 0 !important
+
+	#home-nav
+		opacity: 1 !important
+
+
+.full-logo-2
+	> img
+		position: absolute
+		height: 120px
+		transform: translateY(70%)
+		transition: all $transition-timing $transition-easing
+		left: -5%
 
 .miami-logo
 	&.miami-logo--transparent
@@ -308,7 +324,10 @@ $anchor-line-height: 5rem !default
 		color: $miami-blue
 		background: transparent
 
-
+.social
+	@extend .subscribe
+	a
+		padding: 1rem
 
 %transition-all
 	transition: all $transition-timing $transition-easing
@@ -493,7 +512,6 @@ $anchor-line-height: 5rem !default
 .content
 	h1, h2
 		margin-top: 0
-		font-weight: normal
 
 	ul 
 		padding-left: $padding-medium

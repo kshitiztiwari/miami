@@ -62,25 +62,13 @@ $( document ).ready( function(){
 			$home_nav.css({ 
 				"opacity" : 0,
 			});
-			$full_logo.addClass( 'full-logo--opaque' )
-			$logo.css( {
-				// "top" : 0 + 'px',
-				"z-index" : 400,
-				"width" : final_width + 'px',
-			}).addClass('miami-logo--transparent');
+			$full_logo.addClass( 'full-logo--opaque' );
 		} else {
 			var progress =  animation_progress( logo_position, $window.scrollTop() );
 			$home_nav.css( {
 				"opacity" : animation_state( 0, 1, progress )
 			});
-
 			$full_logo.removeClass( 'full-logo--opaque' );
-
-			$logo.css( {
-				// "top" :  0 + 'px',
-				"width" : animation_state( final_width, initial_width, progress) + 'px',
-				"z-index": 200
-			}).removeClass('miami-logo--transparent');
 		}
 	}
 	$window.scroll( logo_position_handler );
