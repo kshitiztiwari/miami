@@ -3073,8 +3073,7 @@
 
 @font-face {
   font-family: "FFDINWeb";
-  src: url("../assets/fonts/31F820_0_0.eot");
-  src: url("../assets/fonts/31F820_0_0.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/31F820_0_0.woff2") format("woff2"), url("../assets/fonts/31F820_0_0.woff") format("woff"), url("../assets/fonts/31F820_0_0.ttf") format("truetype");
+  src: url("../assets/fonts/31F820_0_1.woff2") format("woff2"), url("../assets/fonts/31F820_0_1.woff") format("woff"), url("../assets/fonts/31F820_0_1.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -3178,6 +3177,7 @@ a:hover {
 
 .full-logo > img {
   height: 54px;
+  margin-top: 30px;
 }
 
 .full-logo.full-logo--opaque {

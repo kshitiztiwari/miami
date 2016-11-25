@@ -4,10 +4,16 @@ $overlay-light: transparentize( $black, 0.7)
 $transition-timing: 300ms
 $transition-easing: ease-in-out
 
+// @font-face
+// 	font-family: "FFDINWeb"
+// 	src: url("#{$font-path}/31F820_0_0.eot")
+// 	src: url("#{$font-path}/31F820_0_0.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/31F820_0_0.woff2") format("woff2"), url("#{$font-path}/31F820_0_0.woff") format("woff"), url("#{$font-path}/31F820_0_0.ttf") format("truetype")
+// 	font-weight: normal
+// 	font-style: normal
+
 @font-face
 	font-family: "FFDINWeb"
-	src: url("#{$font-path}/31F820_0_0.eot")
-	src: url("#{$font-path}/31F820_0_0.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/31F820_0_0.woff2") format("woff2"), url("#{$font-path}/31F820_0_0.woff") format("woff"), url("#{$font-path}/31F820_0_0.ttf") format("truetype")
+	src: url("#{$font-path}/31F820_0_1.woff2") format("woff2"), url("#{$font-path}/31F820_0_1.woff") format("woff"), url("#{$font-path}/31F820_0_1.ttf") format("truetype")
 	font-weight: normal
 	font-style: normal
 
@@ -150,6 +156,7 @@ $anchor-line-height: 5rem !default
 
 	> img
 		height: 54px
+		margin-top: 30px
 
 	&.full-logo--opaque
 		transform: scale(1)
