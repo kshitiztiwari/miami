@@ -1,4 +1,6 @@
 $overlay-dark: transparentize( $black, 0.2)
+$overlay-light: transparentize( $black, 0.7)
+
 $transition-timing: 300ms
 $transition-easing: ease-in-out
 
@@ -19,6 +21,7 @@ body
 	background-color: $body-bakground-color
 	font-family: $body-font-family
 	color: $body-font-color
+	line-height: $body-line-height
 
 img 
 	max-width: 100%
@@ -389,6 +392,11 @@ $anchor-line-height: 5rem !default
 			@extend %cover-available-space
 			z-index: -1
 			background-color: $overlay-dark
+
+	&--overlay--light
+		@extend .bg--overlay
+		&:after 
+			background-color: $overlay-light
 	
 	&--grey
 		background-color: #e8e8e8
@@ -478,15 +486,14 @@ $anchor-line-height: 5rem !default
 .content
 	h1, h2
 		margin-top: 0
-		color: $white
-		background: $dark
 		font-weight: normal
-		display: inline-block
-		@extend %padding-left-right-small
 
 	ul 
 		padding-left: $padding-medium
 		margin-bottom: $padding-large
+
+		> li 
+			margin-bottom: 0.5em
 
 	.sep--line
 		margin-top: $padding-xlarge
@@ -495,14 +502,15 @@ $anchor-line-height: 5rem !default
 		display: block
 		border-top: 1px solid $gray
 
+	img 
+		margin-bottom: $padding-large
+
 
 	img.float-right
 		margin-left: $padding-xlarge
-		margin-right: -$padding-large
 
 	img.float-left
 		margin-right: $padding-xlarge
-		margin-left: -$padding-large
 
 
 
